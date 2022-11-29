@@ -21,7 +21,7 @@ void loop() {
   String locationJSON = "{\"alt\": "+String(gps.altitude.meters())+",\"lat\": "+String(gps.location.lat())+",\"lng\": "+String(gps.location.lng())+",\"kmh\": "+String(gps.speed.kmph(), 1)+"}";
   Particle.publish("Location", locationJSON);
   // The core of your code will likely live here.
-smartDelay(360000);
+smartDelay(3000);
 }
 
 // This custom version of delay() ensures that the gps object
