@@ -1,3 +1,9 @@
+/******************************************************/
+//       THIS IS A GENERATED FILE - DO NOT EDIT       //
+/******************************************************/
+
+#include "Particle.h"
+#line 1 "/Users/elv/particle-iot/boron-gps-tracker/src/boron-gps-tracker.ino"
 /*
  * Project boron-gps-tracker
  * Description:
@@ -6,6 +12,13 @@
  */
 #include <TinyGPS++.h>
 
+void setup();
+void loop();
+static void smartDelay(unsigned long ms);
+String gpsTime(TinyGPSTime &t);
+String gpsDate(TinyGPSDate &d);
+String publishDateTime(TinyGPSDate &d, TinyGPSTime &t);
+#line 9 "/Users/elv/particle-iot/boron-gps-tracker/src/boron-gps-tracker.ino"
 static const uint32_t GPSBaud = 9600;
 TinyGPSPlus gps;
 // setup() runs once, when the device is first turned on.
