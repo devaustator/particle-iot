@@ -18,11 +18,10 @@ Serial1.begin(GPSBaud);
 
 // loop() runs over and over again, as quickly as it can execute.
 void loop() {
-
-  Particle.publish("Lat", String(gps.location.lat()));
-  Particle.publish("Lng", String(gps.location.lng()));
+  String locationJSON = "{\"alt\": "+String(gps.altitude.meters())+",\"lat\": "+String(gps.location.lat())+",\"lng\": "+String(gps.location.lng())+",\"kmh\": "+String(gps.speed.kmph(), 1)+"}";
+  Particle.publish("Location", locationJSON);
   // The core of your code will likely live here.
-smartDelay(30000);
+smartDelay(360000);
 }
 
 // This custom version of delay() ensures that the gps object
